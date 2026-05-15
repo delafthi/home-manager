@@ -245,7 +245,7 @@ in
               let
                 # Automatically mount host's container config into the VM
                 username = if isNull machine.username then "core" else machine.username;
-                configVolume = "$HOME/.config/containers:/home/${username}/.config/containers";
+                configVolume = "$HOME/.config/containers:/var/home/${username}/.config/containers";
                 allVolumes = [ configVolume ] ++ machine.volumes;
               in
               ''
